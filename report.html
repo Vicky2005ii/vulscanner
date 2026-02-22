@@ -1,0 +1,71 @@
+
+    <html>
+    <head>
+        <title>Vulnerability Scan Report</title>
+        <style>
+            body { font-family: Arial; background-color: #f4f4f4; }
+            h1 { text-align: center; }
+            table { width: 90%; margin: auto; border-collapse: collapse; }
+            th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+            th { background-color: #333; color: white; }
+            .summary { width: 90%; margin: 20px auto; padding: 15px; background: white; }
+        </style>
+    </head>
+    <body>
+        <h1>Vulnerability Scan Report</h1>
+
+        <div class="summary">
+            <h2>Scan Summary</h2>
+            <p><strong>Critical:</strong> 1</p>
+            <p><strong>High:</strong> 1</p>
+            <p><strong>Medium:</strong> 0</p>
+            <p><strong>Info:</strong> 2</p>
+            <p><strong>Risk Score:</strong> 5.0/10</p>
+            <p><strong>Overall Risk Level:</strong> MEDIUM</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Target</th>
+                <th>Vulnerability</th>
+                <th>Severity</th>
+                <th>Details</th>
+                <th>Timestamp</th>
+            </tr>
+    
+            <tr>
+                <td>ithasvulneribilityvercel.vercel.app</td>
+                <td>Open Port</td>
+                <td style="color:blue; font-weight:bold;">INFO</td>
+                <td>Port 443 is open</td>
+                <td>2026-02-22 20:33:55.978937</td>
+            </tr>
+        
+            <tr>
+                <td>ithasvulneribilityvercel.vercel.app</td>
+                <td>Open Port</td>
+                <td style="color:blue; font-weight:bold;">INFO</td>
+                <td>Port 80 is open</td>
+                <td>2026-02-22 20:33:55.979761</td>
+            </tr>
+        
+            <tr>
+                <td>https://ithasvulneribilityvercel.vercel.app/login</td>
+                <td>SQL Injection</td>
+                <td style="color:red; font-weight:bold;">CRITICAL</td>
+                <td>Login bypass detected using payload: admin' OR 1=1 --</td>
+                <td>2026-02-22 20:33:59.975610</td>
+            </tr>
+        
+            <tr>
+                <td>https://ithasvulneribilityvercel.vercel.app/search?q=<script>alert('XSS')</script></td>
+                <td>Cross-Site Scripting (XSS)</td>
+                <td style="color:orange; font-weight:bold;">HIGH</td>
+                <td>Reflected XSS detected with payload</td>
+                <td>2026-02-22 20:34:00.996213</td>
+            </tr>
+        
+        </table>
+    </body>
+    </html>
+    

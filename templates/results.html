@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+    <style>
+        table { width: 90%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+        th { background-color: #333; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Scan Results</h1>
+    <h2>Scan Summary</h2>
+    <ul>
+    <li><strong>Critical:</strong> {{ summary.CRITICAL }}</li>
+    <li><strong>High:</strong> {{ summary.HIGH }}</li>
+    <li><strong>Medium:</strong> {{ summary.MEDIUM }}</li>
+    <li><strong>Info:</strong> {{ summary.INFO }}</li>
+    </ul>
+    <hr>
+
+    <table>
+        <tr>
+            <th>Target</th>
+            <th>Vulnerability</th>
+            <th>Severity</th>
+            <th>Details</th>
+            <th>Timestamp</th>
+        </tr>
+
+        {% for row in results %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Scan Another</a>
+</body>
+</html>
